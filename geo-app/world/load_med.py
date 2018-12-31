@@ -16,7 +16,7 @@ mapping = {
 
 # ファイルパス
 geojson_file = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), 'data', 'public_facility.geojson'))
+    os.path.dirname(__file__), 'data', 'tokyoBus.geojson'))
 
 '''
 実行(layer数＝24278, geom_type=point,)

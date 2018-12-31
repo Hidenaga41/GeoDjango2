@@ -51,7 +51,10 @@ mapping = {
 # ファイルパス
 #geojson_file = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data', 'tokyo_busstop'))
 
-geojson_file = 'geo-app/world/data/P11-10_13_GML/P11-10_13-jgd-g_BusStop.shp'
+
+# ファイルパス
+geojson_file = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), 'data', 'tokyoBus.geojson'))
 
 
 # 実行
