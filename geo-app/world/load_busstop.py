@@ -50,7 +50,7 @@ mapping = {
 
 # ファイルパス
 geojson_file = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), 'data', 'tokyo_busstop.geojson'))
+    os.path.dirname(__file__), 'data', 'busstop.geojson'))
 
 # 実行
 

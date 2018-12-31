@@ -1,6 +1,7 @@
 # This is an auto-generated Django model module created by ogrinspect.
 from django.contrib.gis.db import models
 
+
 class Border(models.Model):
     class Meta:
         verbose_name = '行政区域データ'  # オブジェクトの人間が読める名前(単数)小文字でよい
@@ -16,6 +17,7 @@ class Border(models.Model):
     def __str__(self):
         return self.n03_004
 
+
 class School(models.Model):
     class Meta:
         verbose_name = '小学校区データ'  # オブジェクトの人間が読める名前(単数)小文字でよい
@@ -29,6 +31,7 @@ class School(models.Model):
 
     def __str__(self):
         return self.a27_003
+
 
 class Facility(models.Model):
     class Meta:
@@ -46,6 +49,7 @@ class Facility(models.Model):
 
     def __str__(self):
         return self.p02_004
+
 
 class Busstop(models.Model):
     class Meta:
@@ -96,3 +100,21 @@ class Busstop(models.Model):
 
     def __str__(self):
         return self.p11_001
+
+
+class Medical(models.Model):
+    class Meta:
+        verbose_name = '東京医療施設データ '  # オブジェクトの人間が読める名前(単数)小文字でよい
+        verbose_name_plural = '東京医療施設データ '  # オブジェクトの複数の名前 小文字でよい
+
+    p04_001 = models.CharField(max_length=50)
+    p04_002 = models.CharField(max_length=50)
+    p04_003 = models.CharField(max_length=50)
+    p04_004 = models.CharField(max_length=50)
+    p04_005 = models.CharField(max_length=50)
+    p04_006 = models.CharField(max_length=50)
+    p04_007 = models.CharField(max_length=50)
+    geom = models.PointField(srid=4326)
+
+    def __str__(self):
+        return self.p04_004
