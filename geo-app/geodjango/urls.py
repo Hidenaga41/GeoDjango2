@@ -17,7 +17,7 @@ from django.contrib.gis import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from world.views import BorderViewSet, SchoolViewSet, FacilityViewSet, BusstopViewSet
+from world.views import BorderViewSet, SchoolViewSet, FacilityViewSet, BusstopViewSet, MedicalViewSet
 from world.views import index, GeojsonAPIView
 from django.views.generic.base import RedirectView
 
@@ -26,9 +26,11 @@ router.register('border', BorderViewSet)
 router.register('school', SchoolViewSet)
 router.register('facility', FacilityViewSet)
 router.register('busstop', BusstopViewSet)
+router.register('medical', MedicalViewSet)
 
 urlpatterns = [
-    path('favicon\.ico', RedirectView.as_view(url='/static/images/favicon.ico')),
+    path('favicon\.ico', RedirectView.as_view(
+        url='/static/images/favicon.ico')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 

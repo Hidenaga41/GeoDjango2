@@ -117,4 +117,4 @@ class Medical(models.Model):
     geom = models.PointField(srid=4326)
 
     def __str__(self):
-        return self.p04_004
+        return self.p04_002

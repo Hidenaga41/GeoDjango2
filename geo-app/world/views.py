@@ -2,8 +2,8 @@ from rest_framework import viewsets
 from rest_framework_gis.filters import DistanceToPointFilter, InBBoxFilter
 from rest_framework.pagination import PageNumberPagination
 
-from .serializers import BorderSerializer, SchoolSerializer, FacilitySerializer, BusstopSerializer
-from .models import Border, School, Facility, Busstop
+from .serializers import BorderSerializer, SchoolSerializer, FacilitySerializer, BusstopSerializer, MedicalSerializer
+from .models import Border, School, Facility, Busstop, Medical
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -22,6 +22,8 @@ from django.contrib.auth.decorators import login_required
 from rest_framework.permissions import IsAuthenticated
 
 # -----------------------------------------
+
+
 @login_required
 def index(request):
     """
@@ -32,11 +34,14 @@ def index(request):
 
     # 現在ログインしている?
     if request.user.is_authenticated:
-        contexts['user'] = {"username": request.user.username, "user_id": request.user.id, "is_authenticated": True}
+        contexts['user'] = {"username": request.user.username,
+                            "user_id": request.user.id, "is_authenticated": True}
 
-    return render(request,'world/index.html',contexts)
+    return render(request, 'world/index.html', contexts)
 
 # -----------------------------------------
+
+
 class GeojsonAPIView(APIView):
     """
     GeoJsonデータ取得
@@ -48,8 +53,9 @@ class GeojsonAPIView(APIView):
         try:
             # "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
             #encjson  = serialize('geojson', Border.objects.filter(n03_003="札幌市"),srid=4326, geometry_field='geom', fields=('n03_004',) )
-            encjson  = serialize('geojson', Border.objects.filter(n03_004="中央区"),srid=4326, geometry_field='geom', fields=('n03_003','n03_004',) )
-            result   = json.loads(encjson)
+            encjson = serialize('geojson', Border.objects.filter(
+                n03_004="中央区"), srid=4326, geometry_field='geom', fields=('n03_003', 'n03_004',))
+            result = json.loads(encjson)
             response = Response(result, status=status.HTTP_200_OK)
 
         except Exception as e:
@@ -62,10 +68,14 @@ class GeojsonAPIView(APIView):
         return response
 
 # -----------------------------------------
+
+
 class MyPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
 
 # -----------------------------------------
+
+
 class BorderViewSet(viewsets.ModelViewSet):
     queryset = Border.objects.all()
     serializer_class = BorderSerializer
@@ -75,6 +85,8 @@ class BorderViewSet(viewsets.ModelViewSet):
     distance_filter_convert_meters = True
 
 # -----------------------------------------
+
+
 class SchoolViewSet(viewsets.ModelViewSet):
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
@@ -84,6 +96,8 @@ class SchoolViewSet(viewsets.ModelViewSet):
     distance_filter_convert_meters = True
 
 # -----------------------------------------
+
+
 class FacilityViewSet(viewsets.ModelViewSet):
     queryset = Facility.objects.all()
     serializer_class = FacilitySerializer
@@ -93,6 +107,8 @@ class FacilityViewSet(viewsets.ModelViewSet):
     distance_filter_convert_meters = True
 
 # -----------------------------------------
+
+
 class BusstopViewSet(viewsets.ModelViewSet):
     queryset = Busstop.objects.all()
     serializer_class = BusstopSerializer
@@ -101,4 +117,13 @@ class BusstopViewSet(viewsets.ModelViewSet):
     distance_filter_field = bbox_filter_field = 'geom'
     distance_filter_convert_meters = True
 
+# -----------------------------------------
 
+
+class MedicalViewSet(viewsets.ModelViewSet):
+    queryset = Medical.objects.all()
+    serializer_class = MedicalSerializer
+    pagination_class = MyPagination
+    filter_backends = (DistanceToPointFilter,)
+    distance_filter_field = 'geom'
+    distance_filter_convert_meters = True
