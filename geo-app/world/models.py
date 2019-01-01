@@ -107,13 +107,13 @@ class Medical(models.Model):
         verbose_name = '東京医療施設データ '  # オブジェクトの人間が読める名前(単数)小文字でよい
         verbose_name_plural = '東京医療施設データ '  # オブジェクトの複数の名前 小文字でよい
 
-    p04_001 = models.CharField(max_length=50)
-    p04_002 = models.CharField(max_length=50)
-    p04_003 = models.CharField(max_length=50)
-    p04_004 = models.CharField(max_length=50)
-    p04_005 = models.CharField(max_length=50)
-    p04_006 = models.CharField(max_length=50)
-    p04_007 = models.CharField(max_length=50)
+    p04_001 = models.CharField(max_length=255)
+    p04_002 = models.CharField(max_length=255)
+    p04_003 = models.CharField(max_length=255)
+    p04_004 = models.CharField(max_length=255)
+    p04_005 = models.CharField(max_length=255)
+    p04_006 = models.CharField(max_length=255)
+    p04_007 = models.CharField(max_length=255)
     geom = models.PointField(srid=4326)
 
     def __str__(self):

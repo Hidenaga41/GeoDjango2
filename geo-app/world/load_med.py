@@ -15,8 +15,7 @@ mapping = {
 }
 
 # ファイルパス
-geojson_file = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), 'data', 'tokyoBus.geojson'))
+geojson_file= 'world/data/med10.json'
 
 '''
 実行(layer数＝24278, geom_type=point,)
