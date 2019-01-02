@@ -8,7 +8,7 @@ console.log(dist)
 export default {
   mode: 'development',
   entry: {
-    index: '/home/hidenaga/geod2/geo-app/world/static/index.js'
+    index: '/home/hidenaga/geod2/geo-app/world/static/index.jsx'
   },
 
   output: {
@@ -19,7 +19,8 @@ export default {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        //test: /\.jsx$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       }

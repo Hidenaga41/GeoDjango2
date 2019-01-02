@@ -1,30 +1,22 @@
-/*
-// 地理院地図　標準地図
-var std = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
-    { id: 'stdmap', attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>" })
-
-// 地理院地図　淡色地図
-var pale = L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',
-    { id: 'palemap', attribution: "<a href='http://portal.cyberjapan.jp/help/termsofuse.html' target='_blank'>国土地理院</a>" })
+{/* /test
 
 //--------- OSM ------------
 // OSM Japan
 var osmjp = L.tileLayer('http://tile.openstreetmap.jp/{z}/{x}/{y}.png',
     { id: 'osmmapjp', attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' });
 
+
 // OSM本家
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     { id: 'osmmap', attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' });
 
 var baseMaps = {
-    "地理院地図 標準地図": std,
-    "地理院地図 淡色地図": pale,
     "OSM": osm,
     "OSM japan": osmjp
 };
 
 // 初期画面の設定（paleで小石川四丁目バス停を設定）
-var map = L.map('map', { layers: [pale] });
+var map = L.map('map', { layers: [osmjp] });
 map.setView([35.7144586, 139.7389593], 12);
 
 var marker = L.marker([35.7144586, 139.7389593,]).addTo(map);
@@ -37,23 +29,68 @@ L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
 //スケールコントロールを追加（オプションはフィート単位を非表示）
 L.control.scale({ imperial: false }).addTo(map);
 
-//* GeoJSONレイヤーを追加 
-    $.getJSON("/world/geojson/", function (data) {
-        L.geoJson(data).addTo(map);
-    });
-
-*/
 
 import React, { Component } from 'react';
+import App from './js/app.js';
+import TodoList from './TodoList';
 
-class MapApp extends Component {
+class App extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            tasks: [
+                {title: 'todo1', id: 0},
+                {title: 'todo2', id: 1},
+
+            ],
+        };
+    }
+
+
+
+
+
+    render() {
+
+
+        return(
+            <div>
+                <h1>TODO App</h1>
+                <TodoInput />
+                <TodoList task={tasks} />
+            </div>
+        );
+    }
+}
+export default App;
+
+
+
+*/}
+
+import React from 'react'
+import { render } from 'react-dom'
+import MapApp from './world/js/app'
+
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { message: 'something' }
+    }
+
+    onChange(e) {
+        this.setState({ message: e.target.value })
+    }
 
     render() {
         return (
             <div>
-                aaaaaaaaaa
+                <input type="text" onChange={this.onChange.bind(this)} />
+                <p>{this.state.message}</p>
+                <MapApp />
             </div>
         )
     }
 }
-export default MapApp;
+
+render(<App />, document.getElementById('app'))
