@@ -94,6 +94,7 @@ class App extends React.Component {
                 <p>{this.state.message}</p>
                 <MapApp />
                 <ListApp />
+                <LocateApp />
 
             </div>
         )

@@ -6,12 +6,9 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { MapsLocalShipping } from 'material-ui/svg-icons';
 
 
-
 // Import the package
 import LocateControl from 'react-leaflet-locate-control'
 
-
-/*
 // Setup LocateControl options
 const locateOptions = {
     position: 'topright',
@@ -20,7 +17,9 @@ const locateOptions = {
     },
     onActivate: () => { } // callback before engine starts retrieving locations
 }
-*/
+
+// Inside your <Map> component add LocateControl
+
 
 
 class LocateApp extends Component {
@@ -39,11 +38,9 @@ class LocateApp extends Component {
         return (
             <div>
                 <Map center={position} zoom={this.state.zoom}>
-                    <TileLayer
-                        attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <LocateControl />
+
+                    <LocateControl options={locateOptions} startDirectly />
+
 
 
                 </Map>
@@ -51,4 +48,4 @@ class LocateApp extends Component {
         );
     }
 }
-export default LocateApp;
+	export default LocateApp;
