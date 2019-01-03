@@ -12,7 +12,7 @@ export default {
   },
 
   output: {
-    path: '/home/hidenaga/geod2/geo-app/world/dist/',
+    path: '/home/hidenaga/geod2/geo-app/world/static/world/dist/',
     filename: 'bundle.js'
   },
 

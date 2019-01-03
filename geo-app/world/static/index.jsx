@@ -71,6 +71,10 @@ export default App;
 import React from 'react'
 import { render } from 'react-dom'
 import MapApp from './world/js/app'
+import ListApp from './world/js/listapp'
+import Leaflet from 'leaflet'
+//import './world/css/app.css';
+//import 'leaflet/dist/leaflet.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -88,6 +92,7 @@ class App extends React.Component {
                 <input type="text" onChange={this.onChange.bind(this)} />
                 <p>{this.state.message}</p>
                 <MapApp />
+                <ListApp />
             </div>
         )
     }

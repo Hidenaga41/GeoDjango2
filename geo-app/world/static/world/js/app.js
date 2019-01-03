@@ -1,3 +1,44 @@
+import Leaflet from 'leaflet'
+//import '../css/app.css';
+//import 'leaflet/dist/leaflet.css';
+import React, { Component } from 'react'
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import { MapsLocalShipping } from 'material-ui/svg-icons';
+
+
+class MapApp extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            lat: 51.505,
+            lng: -0.09,
+            zoom: 13
+        }
+    }
+
+    render() {
+        const position = [this.state.lat, this.state.lng];
+        return (
+            <div>
+                <Map center={position} zoom={this.state.zoom}>
+                    <TileLayer
+                        attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={position}>
+                        <Popup>
+                            A pretty CSS3 popup. <br /> Easily customizable.
+                    </Popup>
+                    </Marker>
+                </Map>
+            </div>
+        );
+    }
+}
+export default MapApp;
+
+
 /*
 // 地理院地図　標準地図
 var std = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
@@ -37,14 +78,15 @@ L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
 //スケールコントロールを追加（オプションはフィート単位を非表示）
 L.control.scale({ imperial: false }).addTo(map);
 
-//* GeoJSONレイヤーを追加 
+//* GeoJSONレイヤーを追加
     $.getJSON("/world/geojson/", function (data) {
         L.geoJson(data).addTo(map);
     });
 
-*/
+
 
 import React, { Component } from 'react';
+
 
 class MapApp extends Component {
 
@@ -52,8 +94,11 @@ class MapApp extends Component {
         return (
             <div>
                 aaaaaaaaaa
+
             </div>
         )
     }
 }
 export default MapApp;
+
+*/
