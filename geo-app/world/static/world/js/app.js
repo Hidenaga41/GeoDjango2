@@ -6,6 +6,23 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { MapsLocalShipping } from 'material-ui/svg-icons';
 
 
+
+// Import the package
+import LocateControl from 'react-leaflet-locate-control'
+
+
+/*
+// Setup LocateControl options
+const locateOptions = {
+    position: 'topright',
+    strings: {
+        title: 'Show me where I am, yo!'
+    },
+    onActivate: () => { } // callback before engine starts retrieving locations
+}
+*/
+
+
 class MapApp extends Component {
 
     constructor() {
@@ -31,6 +48,9 @@ class MapApp extends Component {
                             A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                     </Marker>
+
+
+
                 </Map>
             </div>
         );

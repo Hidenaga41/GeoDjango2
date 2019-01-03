@@ -14,6 +14,8 @@ const MyMarkersList = ({ markers }) => {
     return <div style={{ display: 'none' }}>{items}</div>
 }
 
+
+
 class ListApp extends Component {
     constructor() {
         super()

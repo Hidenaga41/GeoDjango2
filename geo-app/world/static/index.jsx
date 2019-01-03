@@ -72,6 +72,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import MapApp from './world/js/app'
 import ListApp from './world/js/listapp'
+import LocateApp from './world/js/geolocation'
 import Leaflet from 'leaflet'
 //import './world/css/app.css';
 //import 'leaflet/dist/leaflet.css';
@@ -93,6 +94,7 @@ class App extends React.Component {
                 <p>{this.state.message}</p>
                 <MapApp />
                 <ListApp />
+
             </div>
         )
     }
