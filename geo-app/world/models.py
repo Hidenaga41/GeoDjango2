@@ -118,3 +118,27 @@ class Medical(models.Model):
 
     def __str__(self):
         return self.p04_002
+
+class BusPole(models.Model):
+    class Meta:
+        verbose_name ="都営バス停留所"
+        verbose_name_plural = "toeibasupole"
+
+    pole_id = models.CharField(max_length=50, db_column='@id')
+    pole_type = models.CharField(max_length=50, db_column='@type')
+    pole_owl_sameas = models.CharField(max_length=50, db_column='owl:sameAs')
+    pole_date = models.CharField(max_length=50, db_column='dc:date')
+    pole_title = models.CharField(max_length=50, db_column='dc:title')
+    pole_kana = models.CharField(max_length=50, db_column='odpt:kana')
+    pole_long = models.CharField(max_length=50, db_column='geo:long')
+    pole_lat = models.CharField(max_length=50, db_column='geo:lat')
+    pole_route = models.CharField(max_length=50, db_column='odpt:busroutePattern')
+    pole_operator= models.CharField(max_length=50, db_column='odpt:operator')
+    pole_num = models.CharField(max_length=50, db_column='odpt:busstopPoleNumber')
+    pole_time = models.CharField(max_length=50, db_column='odpt:busstopTimetable')
+
+
+    def __str__(self):
+        return self.pole_title
+
+

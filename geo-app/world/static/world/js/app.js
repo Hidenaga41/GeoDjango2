@@ -46,7 +46,7 @@ class MapApp extends Component {
                     <Marker position={position}>
                         <Popup>
                             A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
+                        </Popup>
                     </Marker>
 
 

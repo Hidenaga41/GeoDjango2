@@ -48,4 +48,4 @@ class LocateApp extends Component {
         );
     }
 }
-	export default LocateApp;
+export default LocateApp;

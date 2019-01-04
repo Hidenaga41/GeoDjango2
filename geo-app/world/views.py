@@ -31,6 +31,7 @@ def index(request):
     """
 
     contexts = {}
+    print("HOGE")
 
     # 現在ログインしている?
     if request.user.is_authenticated:
