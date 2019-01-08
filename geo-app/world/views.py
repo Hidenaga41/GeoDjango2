@@ -3,7 +3,7 @@ from rest_framework_gis.filters import DistanceToPointFilter, InBBoxFilter
 from rest_framework.pagination import PageNumberPagination
 
 from .serializers import BorderSerializer, SchoolSerializer, FacilitySerializer, BusstopSerializer, MedicalSerializer
-from .models import Border, School, Facility, Busstop, Medical
+from .models import Border, School, Facility, Busstop, Medical, BusPole
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -31,7 +31,6 @@ def index(request):
     """
 
     contexts = {}
-    print("HOGE")
 
     # 現在ログインしている?
     if request.user.is_authenticated:
@@ -128,3 +127,5 @@ class MedicalViewSet(viewsets.ModelViewSet):
     filter_backends = (DistanceToPointFilter,)
     distance_filter_field = 'geom'
     distance_filter_convert_meters = True
+
+# ------------------------------------------

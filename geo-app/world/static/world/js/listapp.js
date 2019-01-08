@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import fetchJsonp from 'fetch-jsonp';
+import qs from 'qs';
 
 const MyPopupMarker = ({ children, position }) => (
     <Marker position={position}>
@@ -15,6 +17,10 @@ const MyMarkersList = ({ markers }) => {
 }
 
 
+const startRequest = medical => ({
+    type: 'POINT',
+    payload: { id }
+})
 
 class ListApp extends Component {
     constructor() {
@@ -25,6 +31,14 @@ class ListApp extends Component {
             zoom: 13,
         }
     }
+
+
+
+
+
+
+
+
 
     render() {
         const center = [this.state.lat, this.state.lng]
