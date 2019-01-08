@@ -1,9 +1,20 @@
-import Leaflet from 'leaflet'
 //import '../css/app.css';
 //import 'leaflet/dist/leaflet.css';
 import React, { Component } from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { MapsLocalShipping } from 'material-ui/svg-icons';
+import { render } from 'react-dom'
+import ListApp from './listapp'
+import LocateApp from './geolocation'
+import Leaflet from 'leaflet'
+//import './world/css/app.css';
+//import 'leaflet/dist/leaflet.css';
+import logger from 'redux-logger';
+import { Provider } from 'react-redux';
+import * as reducers from './reducers';
+import { ConnectRouter } from 'react-router-redux';
+import { createBrouserHistory } from 'history/createBrowserHistory';
+import createStore from './createStore';
 
 
 
@@ -23,40 +34,29 @@ const locateOptions = {
 */
 
 
-class MapApp extends Component {
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { message: 'something' }
+    }
 
-    constructor() {
-        super()
-        this.state = {
-            lat: 51.505,
-            lng: -0.09,
-            zoom: 13
-        }
+    onChange(e) {
+        this.setState({ message: e.target.value })
     }
 
     render() {
-        const position = [this.state.lat, this.state.lng];
         return (
             <div>
-                <Map center={position} zoom={this.state.zoom}>
-                    <TileLayer
-                        attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={position}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
+                <input type="text" onChange={this.onChange.bind(this)} />
+                <p>{this.state.message}</p>
+                <ListApp />
 
 
-
-                </Map>
             </div>
-        );
+        )
     }
 }
-export default MapApp;
+export default App;
 
 
 /*

@@ -41,8 +41,6 @@ class LocateApp extends Component {
 
                     <LocateControl options={locateOptions} startDirectly />
 
-
-
                 </Map>
             </div>
         );

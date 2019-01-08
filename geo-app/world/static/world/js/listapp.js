@@ -33,13 +33,6 @@ class ListApp extends Component {
     }
 
 
-
-
-
-
-
-
-
     render() {
         const center = [this.state.lat, this.state.lng]
 
