@@ -7,8 +7,6 @@
 html, body {
     margin: 10px;
     padding: 0;
-    height: 100%;
-    width: 100%;
 }
 
 #root {
@@ -18,7 +16,7 @@ html, body {
 
 
 .leaflet-container {
-    width: 600px;
-    height: 300px;
-    margin: 10px;
+    width: 80%;
+    height: 500px;
+    margin: 50px;
 }

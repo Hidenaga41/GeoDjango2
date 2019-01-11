@@ -4,7 +4,7 @@ import App from './world/js/app'
 //import ListApp from './world/js/listapp'
 //import LocateApp from './world/js/geolocation'
 //import Leaflet from 'leaflet'
-//import './world/css/app.css';
+import './world/css/app.css';
 //import 'leaflet/dist/leaflet.css';
 //import logger from 'redux-logger';
 import Provider from 'react-redux';
