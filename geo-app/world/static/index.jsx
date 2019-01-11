@@ -9,7 +9,7 @@ import App from './world/js/app'
 //import logger from 'redux-logger';
 import Provider from 'react-redux';
 //import * as reducers from './world/js/reducers';
-import { ConectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import createStore from './world/js/createStore';
 console.log(createBrowserHistory)
@@ -20,11 +20,11 @@ console.log("hoge")
 console.log(<App />)
 
 render(
-    <Provider store={store}>
-        <ConectedRouter history={history}>
-            <App />
-        </ConectedRouter>
-    </Provider>, document.getElementById('app'))
+    //    <Provider store={store}><ConnectedRouter history={history}>
+    <App />
+    //        </ConnectedRouter>
+    //    </Provider>
+    , document.getElementById('app'))
 
 
 

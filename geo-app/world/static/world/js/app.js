@@ -1,22 +1,23 @@
 //import '../css/app.css';
 //import 'leaflet/dist/leaflet.css';
 import React, { Component } from 'react'
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+//import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import { MapsLocalShipping } from 'material-ui/svg-icons';
 import { render } from 'react-dom'
 import ListApp from './listapp'
 import LocateApp from './geolocation'
-import Leaflet from 'leaflet'
+//import Leaflet from 'leaflet'
 //import './world/css/app.css';
 //import 'leaflet/dist/leaflet.css';
-import logger from 'redux-logger';
-import { Provider } from 'react-redux';
-import * as reducers from './reducers';
-import { ConnectRouter } from 'react-router-redux';
+//import logger from 'redux-logger';
+//import { Provider } from 'react-redux';
+//import * as reducers from './reducers';
+import { ConnectedRouter } from 'react-router-redux';
 import { createBrouserHistory } from 'history/createBrowserHistory';
 import createStore from './createStore';
 
-
+import { Route, Link } from 'react-router-dom';
+import Medical from './components/Medical'
 
 // Import the package
 import LocateControl from 'react-leaflet-locate-control'
@@ -46,10 +47,20 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div  >
+                <ul>
+                    <li>all </li>
+
+                </ul>
+
+
+
                 <input type="text" onChange={this.onChange.bind(this)} />
                 <p>{this.state.message}</p>
-                <ListApp />
+                <div>
+                    <ListApp />
+                </div>
+
 
 
             </div>
