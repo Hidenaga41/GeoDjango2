@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM, { render } from 'react-dom'
 import App from './world/js/app'
 //import ListApp from './world/js/listapp'
 //import LocateApp from './world/js/geolocation'
@@ -7,8 +7,10 @@ import App from './world/js/app'
 import './world/css/app.css';
 //import 'leaflet/dist/leaflet.css';
 //import logger from 'redux-logger';
-import Provider from 'react-redux';
+//import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 //import * as reducers from './world/js/reducers';
+//import createBrowserHistory from 'history/createBrowserHistory'; // 追加
 import { ConnectedRouter } from 'react-router-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import createStore from './world/js/createStore';
@@ -19,12 +21,13 @@ const store = createStore(history);
 console.log("hoge")
 console.log(<App />)
 
-render(
-    //    <Provider store={store}><ConnectedRouter history={history}>
-    <App />
-    //        </ConnectedRouter>
-    //    </Provider>
-    , document.getElementById('app'))
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
+    </Provider>
+    , document.getElementById('app'));
 
 
 

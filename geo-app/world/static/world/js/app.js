@@ -17,10 +17,14 @@ import { createBrouserHistory } from 'history/createBrowserHistory';
 import createStore from './createStore';
 
 import { Route, Link } from 'react-router-dom';
-import Med from './components/Medical'
-
+//import Med from './components/Medical'
+import Medical from './containers/Medical';
 // Import the package
 import LocateControl from 'react-leaflet-locate-control'
+import { MuiThemeProvider } from 'material-ui/styles';
+import myTheme from './myThemeFile';
+
+
 
 class App extends React.Component {
     constructor(props) {
@@ -34,16 +38,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div  >
-                <ul>
-                    <li>all </li>
-                </ul>
-                <input type="text" onChange={this.onChange.bind(this)} />
-                <p>{this.state.message}</p>
-                <div>
-                    <ListApp />
+            <MuiThemeProvider theme={myTheme}>
+                <div  >
+                    <Reboot />
+                    <ul>
+                        <li>all </li>
+                        <li>bus-pole</li>
+                        <li>medical</li>
+                        <li>setting</li>
+
+                    </ul>
+                    <input type="text" onChange={this.onChange.bind(this)} />
+                    <p>{this.state.message}</p>
+                    <div>
+                        <ListApp />
+                    </div>
                 </div>
-            </div>
+            </MuiThemeProvider>
         )
     }
 }

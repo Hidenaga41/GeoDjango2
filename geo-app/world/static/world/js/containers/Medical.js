@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Medical from '../components/Medical';
-import * as actions from '../actions/Ranking';
+import * as actions from '../actions/Medical';
 
 const mapStateToProps = (state, ownProps) => ({
     id: ownProps.id
