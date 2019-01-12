@@ -2,7 +2,6 @@
 //import 'leaflet/dist/leaflet.css';
 import React, { Component } from 'react'
 //import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-import { MapsLocalShipping } from 'material-ui/svg-icons';
 import { render } from 'react-dom'
 import ListApp from './listapp'
 import LocateApp from './geolocation'
@@ -23,7 +22,8 @@ import Medical from './containers/Medical';
 import LocateControl from 'react-leaflet-locate-control'
 import { MuiThemeProvider } from 'material-ui/styles';
 import myTheme from './myThemeFile';
-
+import { Reboot, AppBar, Toolbar, Typography, Drawer } from 'material-ui';
+import List, { ListItem, ListText } from 'material-ui/List'
 
 
 class App extends React.Component {
@@ -38,9 +38,21 @@ class App extends React.Component {
 
     render() {
         return (
-            <MuiThemeProvider theme={myTheme}>
-                <div  >
+            <div style={{ paddingLeft: 240 }}>
+                <MuiThemeProvider theme={myTheme}>
                     <Reboot />
+                    <AppBar>
+                        <Toolbar>
+                            <Typography type='title' color='inherit'>
+                                geo-django
+                        </Typography>
+                        </Toolbar>
+                    </AppBar>
+
+                    <Drawer type='permanent'>
+                        <List style={{ width: 240 }}>
+                        </List>
+                    </Drawer>
                     <ul>
                         <li>all </li>
                         <li>bus-pole</li>
@@ -53,8 +65,8 @@ class App extends React.Component {
                     <div>
                         <ListApp />
                     </div>
-                </div>
-            </MuiThemeProvider>
+                </MuiThemeProvider>
+            </div>
         )
     }
 }

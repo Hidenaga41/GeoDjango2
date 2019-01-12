@@ -1,18 +1,27 @@
-import { createMuiTheme } from 'material-ui/styles';
-import { indigo100 } from 'material-ui/styles/colors';
-import { pink100 } from 'material-ui/styles/colors';
-import { red100 } from 'material-ui/styles/colors';
-
-
-
+import { red, pink, indigo } from "material-ui/colors";
+import { createMuiTheme } from "material-ui";
 
 const myTheme = createMuiTheme({
     palette: {
         contrastThreshold: 3,
-        primary: indigo100,
-        secondary: pink100,
-        error: red100,
-        tonalOffset: 0.2,
+        primary: indigo,
+        secondary: pink,
+        error: red,
+    },
+    typography: {
+        // Use the system font instead of the default Roboto font.
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
     },
 });
 

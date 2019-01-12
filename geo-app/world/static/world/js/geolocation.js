@@ -3,7 +3,6 @@ import Leaflet from 'leaflet'
 //import 'leaflet/dist/leaflet.css';
 import React, { Component } from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
-import { MapsLocalShipping } from 'material-ui/svg-icons';
 
 
 // Import the package

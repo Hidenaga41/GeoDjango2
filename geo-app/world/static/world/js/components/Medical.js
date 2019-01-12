@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import recentActors from 'material-ui/svg-icons/av/recent-actors';
 
 export default class Medical extends React.Component {
     componentWillMount() {
