@@ -18,5 +18,6 @@ html, body {
 .leaflet-container {
     width: 80%;
     height: 500px;
-    margin: 50px;
+    margin: 50px; 
 }
+

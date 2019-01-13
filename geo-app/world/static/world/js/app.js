@@ -24,7 +24,10 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import myTheme from './myThemeFile';
 import { Reboot, AppBar, Toolbar, Typography, Drawer } from 'material-ui';
 import List, { ListItem, ListText } from 'material-ui/List'
+import Children from './children';
 
+console.log("huga")
+console.log(Children)
 
 class App extends React.Component {
     constructor(props) {
@@ -53,18 +56,19 @@ class App extends React.Component {
                         <List style={{ width: 240 }}>
                         </List>
                     </Drawer>
-                    <ul>
-                        <li>all </li>
-                        <li>bus-pole</li>
-                        <li>medical</li>
-                        <li>setting</li>
+                    <div style={{ paddingTop: 100 }}>
+                        <ul>
+                            <li>all </li>
+                            <li>bus-pole</li>
+                            <li>medical</li>
+                            <li>setting</li>
+                        </ul>
+                        <input type="text" onChange={this.onChange.bind(this)} />
+                        <p>{this.state.message}</p>
 
-                    </ul>
-                    <input type="text" onChange={this.onChange.bind(this)} />
-                    <p>{this.state.message}</p>
-                    <div>
                         <ListApp />
                     </div>
+                    <Children />
                 </MuiThemeProvider>
             </div>
         )
