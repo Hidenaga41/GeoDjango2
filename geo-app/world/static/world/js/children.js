@@ -18,18 +18,32 @@ class Children extends React.Component {
 
     }
 
+    onStarHover(nextValue, prevalue, name) {
+        this.setState({
+            rating: nextValue
+
+
+        });
+    }
+
+
+    onStarHoverOut(nextValue, prevalue, name) {
+        this.setState({ rating: nextValue });
+    }
+
     render() {
         const { rating } = this.state;
 
         return (
             <div>
-                <h2>Rating from state": {rating}</h2>
+                <h2>this clinic's rating: {rating}</h2>
+                <img src='../../../data/IMG_PROFILE.JPG' />
                 <StarRatingComponent
                     name="rate1"
                     starColor='red'
                     starCount={10}
                     value={rating}
-                    onStarClick={this.onStarClick.bind(this)}
+                    onStarHoverOut={this.onStarHoverOut.bind(this)}
                 />
             </div>
         );
