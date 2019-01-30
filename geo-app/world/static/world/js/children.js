@@ -37,7 +37,7 @@ class Children extends React.Component {
         return (
             <div>
                 <h2>this clinic's rating: {rating}</h2>
-                <img src='../../../data/IMG_PROFILE.JPG' />
+                <img src='../IMG_PROFILE.JPG' />
                 <StarRatingComponent
                     name="rate1"
                     starColor='red'

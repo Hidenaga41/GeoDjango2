@@ -5,6 +5,8 @@ const stat = path.resolve(__dirname, 'world/static/')
 console.log(stat)
 const dist = path.resolve(__dirname, 'world/dist/')
 console.log(dist)
+
+
 export default {
   mode: 'development',
   entry: {

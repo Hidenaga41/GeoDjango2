@@ -1,7 +1,15 @@
 {
     "presets": [
-        "env",
+        [
+            "env",
+            {
+                "targets": {
+                    "node": "current"
+                },
+            }
+        ],
         "react",
         "stage-2"
     ]
 }
+//20190130 edit env ,http://mzqvis6akmakplpmcjx3.hatenablog.com/entry/2018/02/07/161051

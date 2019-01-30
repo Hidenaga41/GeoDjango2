@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet'
 import fetchJsonp from 'fetch-jsonp';
 import qs from 'qs';
 import Children from "./children"
+import { connect } from "react-redux";
+import Medical from './containers/Medical'
+
 
 
 const MyPopupMarker = ({ children, position }) => (
@@ -24,6 +27,14 @@ const startRequest = medical => ({
     payload: { id }
 })
 
+const BusRouteId = medical => ({
+    id: "odpt: odpt.BusroutePattern: Toei.To02.32304.2",
+    name: "to02"
+})
+
+
+
+
 class ListApp extends Component {
     constructor() {
         super()
@@ -33,6 +44,11 @@ class ListApp extends Component {
             zoom: 13,
         }
     }
+
+    mapClick(e) {
+        this.props.dispatch(setPoint)
+    }
+
 
 
     render() {
@@ -50,6 +66,8 @@ class ListApp extends Component {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <MyMarkersList markers={markers} />
+                <GeoJSON />
+                <Medical />
             </Map>
         )
     }

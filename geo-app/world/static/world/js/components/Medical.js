@@ -33,6 +33,6 @@ Medical.PropTypes = {
     onUpdate: PropTypes.func.isRequired
 };
 
-//Medical.defaultProps = {
-//    id: ''
-//}
+Medical.defaultProps = {
+    id: 'odpt.BusroutePattern:Toei.To02.32304.2'
+}

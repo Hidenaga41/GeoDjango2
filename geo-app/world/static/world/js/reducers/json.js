@@ -1,7 +1,7 @@
 const initialState = {
     categories: [
         {
-            id: '1',
+            id: 'odpt.BusroutePattern:Toei.To02.32304.2',
             name: 'all'
         },
         {
