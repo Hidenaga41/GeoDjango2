@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 export default class Medical extends React.Component {
     componentWillMount() {
@@ -26,11 +26,11 @@ export default class Medical extends React.Component {
     }
 }
 
-Medical.PropTypes = {
-    id: PropTypes.string,
+Medical.propTypes = {
+    id: propTypes.string,
 
-    onMount: PropTypes.func.isRequired,
-    onUpdate: PropTypes.func.isRequired
+    onMount: propTypes.func.isRequired,
+    onUpdate: propTypes.func.isRequired
 };
 
 Medical.defaultProps = {

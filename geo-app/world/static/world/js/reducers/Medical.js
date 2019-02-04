@@ -30,6 +30,7 @@ export default (state = initialState, action) => {
             };
 
         case 'RECEIVE_DATA':
+            console.log(action.payload.error)
             return action.payload.error
                 ? { ...state, error: true }
                 : {

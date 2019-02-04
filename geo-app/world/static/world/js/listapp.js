@@ -67,7 +67,6 @@ class ListApp extends Component {
                 />
                 <MyMarkersList markers={markers} />
                 <GeoJSON />
-                <Medical />
             </Map>
         )
     }
