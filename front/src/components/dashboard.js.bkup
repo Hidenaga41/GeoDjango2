@@ -1,0 +1,23 @@
+import React from "react";
+import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
+import "../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
+import "../../node_modules/bootstrap-3.3.7/dist/css/bootstrap.min.css";
+
+//table
+import Table from "material-dashboard-react";
+
+export default class Dashboard extends React.Component {
+    render(){
+        return(
+            <div>
+                <h2>Dashboard</h2>
+            </div>
+            <div>
+                <Table>
+
+                </Table>
+            </div>
+        );
+    }
+}
+
