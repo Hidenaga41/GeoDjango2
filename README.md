@@ -1,3 +1,3 @@
-# geodjango
+# README
+GeoDjangoを使ってみた
 
-地図情報と交通データ
