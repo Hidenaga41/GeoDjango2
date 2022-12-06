@@ -41,7 +41,7 @@
     "leaflet.locatecontrol": "^0.66.0",
     "material-ui": "^1.0.0-beta.30",
     "prop-type": "0.0.1",
-    "qs": "^6.6.0",
+    "qs": "^6.6.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-leaflet": "^2.1.4",
